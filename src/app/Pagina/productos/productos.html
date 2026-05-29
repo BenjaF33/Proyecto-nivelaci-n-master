@@ -51,7 +51,7 @@
 
             <div class="yerba">
                 @for (p of productosFiltrados; track p.id) {
-                @if (p.disponible && p.categoria === 'Yerba') {
+                @if (p.categoria === 'Yerba') {
 
                 <div class="card">
                     @if (p.descuento > 0) {
@@ -62,6 +62,7 @@
                     <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
                     <h3>{{ p.nombre }}</h3>
                     <p>${{ p.precio }}</p>
+                    <p>Stock: {{ p.stock }}</p>
                     <p>Peso: {{ p.peso }} gr</p>
                     <div class="botones">
                         <button (click)="agregarFavorito(p)">
@@ -83,7 +84,7 @@
 
             <div class="mates">
                 @for (p of productosFiltrados; track p.id) {
-                @if (p.disponible && p.categoria === 'Mates') {
+                @if (p.categoria === 'Mates') {
                 <div class="card">
                     @if (p.descuento > 0) {
                     <span class="descuento">
@@ -93,6 +94,7 @@
                     <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
                     <h3>{{ p.nombre }}</h3>
                     <p>${{ p.precio }}</p>
+                    <p>Stock: {{ p.stock }}</p>
                     <div class="botones">
                         <button (click)="agregarFavorito(p)">
                             Favorito
@@ -113,7 +115,7 @@
 
             <div class="bombillas">
                 @for (p of productosFiltrados; track p.id) {
-                @if (p.disponible && p.categoria === 'Bombillas') {
+                @if ( p.categoria === 'Bombillas') {
                 <div class="card">
                     @if (p.descuento > 0) {
                     <span class="descuento">
@@ -123,6 +125,7 @@
                     <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
                     <h3>{{ p.nombre }}</h3>
                     <p>${{ p.precio }}</p>
+                    <p>Stock: {{ p.stock }}</p>
                     <div class="botones">
                         <button (click)="agregarFavorito(p)">
                             Favorito
@@ -143,7 +146,7 @@
 
             <div class="termos">
                 @for (p of productosFiltrados; track p.id) {
-                @if (p.disponible && p.categoria === 'Termos') {
+                @if (p.categoria === 'Termos') {
                 <div class="card">
                     @if (p.descuento > 0) {
                     <span class="descuento">
@@ -153,6 +156,7 @@
                     <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
                     <h3>{{ p.nombre }}</h3>
                     <p>${{ p.precio }}</p>
+                    <p>Stock: {{ p.stock }}</p>
                     <p>Peso: {{ p.peso }} L</p>
 
                     <div class="botones">
@@ -160,8 +164,8 @@
                             Favorito
                         </button>
 
-                        <button (click)="agregarCarrito(p)">
-                            + carrito
+                        <button (click)="agregarCarrito(p)" [disabled]="!p.disponible">
+                            {{ p.disponible ? '+ carrito' : 'Sin stock' }}
                         </button>
                     </div>
                 </div>
