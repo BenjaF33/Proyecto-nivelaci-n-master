@@ -1,0 +1,55 @@
+<body>
+    <section class="favoritos">
+        <h1>Favoritos</h1>
+        <div class="contenedor-favoritos">
+            <!-- TITULOS -->
+
+            @if (favoritos.length > 0) {
+            <div class="titulos">
+                <span>Producto</span>
+                <span>Precio</span>
+                <span>Stock</span>
+            </div>
+            }
+
+            <!-- LISTA -->
+            <div class="lista">
+
+                @if (favoritos.length === 0) {
+                <p class="vacio">No tienes productos favoritos aún.</p>
+                }@else{
+                @for (f of favoritos; track f.id) {
+
+                <div class="favorito-item">
+
+                    <section class="producto">
+                        <h3>{{ f.nombre }}</h3>
+                    </section>
+
+                    <p class="precio">
+                        ${{ f.precio }}
+                    </p>
+
+                    <p class="stock">
+                        {{ f.stock }}
+                    </p>
+
+                    <button class="eliminar" (click)="eliminarFavorito(f)">
+                        ✖
+                    </button>
+                    <button class="agregar" (click)="agregarCarrito(f)">
+                        + carrito
+                    </button>
+
+
+                </div>
+                }
+                }
+
+
+            </div>
+
+        </div>
+    </section>
+
+</body>

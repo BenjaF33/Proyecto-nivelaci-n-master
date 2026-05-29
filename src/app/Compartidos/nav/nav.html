@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/inicio">
+      <img src="assets/logo-removebg-preview.png" alt="Logo Yerba Mate" class="me-2">
+      <span class="fw-bold">Ritual Yerbero</span>
+    </a>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="nav justify-content-center ">
+        <li class="nav-item">
+          <a routerLink="/inicio" class="nav-link px-2 text-body-secondary">Inicio</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/productos" class="nav-link px-2 text-body-secondary">Productos</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/contactos" class="nav-link px-2 text-body-secondary">Contactos</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/ofertas" class="nav-link px-2 text-body-secondary">Ofertas</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="carrito d-flex align-items-center">
+      <ul class="nav justify-content-center align-items-center">
+
+        <!-- CARRITO -->
+        <li class="nav-item">
+
+
+
+          <a routerLink="/carrito" class="nav-link px-2 text-body-secondary">
+
+            @if (carritoService.productos.length > 0) {
+            <span class="burbuja">
+              {{carritoService.productos.length}}
+            </span>
+
+            }
+
+            <div id="carrito">
+              <img src="assets/carrito-de-compras.png" alt="Carrito" class="imgcarrito">
+            </div>
+          </a>
+        </li>
+
+        <!-- LOGIN -->
+        <li class="nav-item">
+          <a routerLink="/inicio-sesion" class="nav-link px-2 text-body-secondary">
+            <div>
+              <img src="assets/cuenta.png" alt="Usuario" class="imgusuario">
+            </div>
+          </a>
+        </li>
+
+        <!-- FAVORITOS -->
+        <li class="nav-item">
+          <a routerLink="/favoritos" class="nav-link px-2 text-body-secondary">
+
+            @if (favoritoService.favoritos.length > 0) {
+            <span class="burbuja">
+              {{favoritoService.favoritos.length}}
+            </span>
+
+            }
+
+
+
+
+            <div id="favoritos">
+              <img src="assets/favorito.png" alt="Favoritos" class="imgfavoritos">
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>

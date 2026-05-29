@@ -1,0 +1,119 @@
+<body>
+
+    <section class="carrito">
+        <h1>Tu carrito</h1>
+        <div class="contenedor-carrito">
+            <div class="productos">
+                @if (productos.length > 0) {
+                <div class="titulos">
+                    <span>Producto</span>
+                    <span>Precio</span>
+                    <span>Cantidad</span>
+                    <span>Subtotal</span>
+                </div>
+                }
+                <div>
+
+                    @if (productos.length === 0) {
+
+                    <p class="vacío">Tu carrito está vacío</p>
+
+                    } @else {
+
+                    @for (p of productos; track $index) {
+
+                    <div class="producto">
+
+                        <img [src]="p.imagen" [alt]="p.nombre">
+
+                        <div class="info">
+                            <h3>{{ p.nombre }}</h3>
+                            <p>{{ p.peso }} g</p>
+                        </div>
+
+                        <p class="precio">
+
+                            @if (p.descuento && p.descuento > 0) {
+
+                            <span class="precio-viejo">
+                                ${{ p.precio }}
+                            </span>
+
+                            <span class="precio-descuento">
+                                ${{
+                                p.precio -
+                                (p.precio * p.descuento / 100)
+                                }}
+                            </span>
+
+                            } @else {
+
+                            ${{ p.precio }}
+
+                            }
+
+                        </p>
+
+                        <div class="cantidad">
+
+                            <button type="button" (click)="editarProducto('restar', p)">
+                                -
+                            </button>
+                            <span>{{ p.cantidad }}</span>
+                            <button type="button" (click)="editarProducto('sumar', p)">
+                                +
+                            </button>
+                        </div>
+                        <p class="subtotal">
+                            ${{ subtotal(p) }}
+                        </p>
+                        <button class="eliminar" (click)="eliminarProducto(p)">
+                            ✖
+                        </button>
+                    </div>
+                    }
+                    }
+                </div>
+                <div class="acciones">
+                    <button class="seguir" routerLink="/productos">
+                        ← Seguir comprando
+                    </button>
+                    @if (productos.length > 0) {
+                    <button class="vaciar" type="button" (click)="vaciarCarrito()">🗑️ Vaciar carrito</button>
+                    }
+                </div>
+
+            </div>
+
+            <!-- resumen -->
+
+            <div class="resumen">
+
+                <h2>Resumen del pedido</h2>
+
+                <div class="fila">
+                    <span>Subtotal</span>
+                    <span>${{ total }}</span>
+                </div>
+
+                <div class="fila">
+                    <span>Envío</span>
+                    <span class="gratis">Gratis</span>
+                </div>
+
+                <div class="total">
+                    <span>Total</span>
+                    <span>${{ total }}</span>
+                </div>
+
+                <button class="comprar" type="button">
+                    Finalizar compra
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>

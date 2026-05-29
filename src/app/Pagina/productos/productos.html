@@ -1,0 +1,174 @@
+<body>
+
+
+
+    <section class="productos">
+
+        <!-- FILTRO -->
+
+        <div class="filtroBotones">
+            <div class="filtro">
+
+                <h2>Filtros</h2>
+                <div class="linea">
+                    <div>
+                        <input #buscador type="text" placeholder="Buscador" (input)="filtrarProductos(buscador.value)">
+
+                        <select #cate (change)="filtroCategoria(cate.value)">
+                            <option value="" selected disabled>Categoria</option>
+                            <option value="todas">todo</option>
+                            <option value="Yerba">Yerba</option>
+                            <option value="Mates">Mates</option>
+                            <option value="Bombillas">Bombillas</option>
+                            <option value="Termos">Termos</option>
+                        </select>
+
+                        <select #filtro (change)="filtroPrecio(filtro.value)">
+                            <option value="" selected disabled>Precio</option>
+                            <option value="todos">Todos</option>
+                            <option value="menos">Menos de $5000</option>
+                            <option value="medio">$5000 - $15000</option>
+                            <option value="mas">Más de $15000</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="volverArriba">
+                <button (click)="volverArriba()">volver arriba</button>
+            </div>
+
+        </div>
+        <div class="divP">
+
+            @if (cate.value === 'Yerba' || cate.value === 'todas' || cate.value === '') {
+            <h1 class="divisiones" id="yerba">Yerba</h1>
+            }
+
+
+
+            <div class="yerba">
+                @for (p of productosFiltrados; track p.id) {
+                @if (p.disponible && p.categoria === 'Yerba') {
+
+                <div class="card">
+                    @if (p.descuento > 0) {
+                    <span class="descuento">
+                        -{{ p.descuento }}%
+                    </span>
+                    }
+                    <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
+                    <h3>{{ p.nombre }}</h3>
+                    <p>${{ p.precio }}</p>
+                    <p>Peso: {{ p.peso }} gr</p>
+                    <div class="botones">
+                        <button (click)="agregarFavorito(p)">
+                            Favorito
+                        </button>
+
+                        <button (click)="agregarCarrito(p)">
+                            + carrito
+                        </button>
+                    </div>
+                </div>
+                }
+                }
+            </div>
+
+            @if (cate.value === 'Mates' || cate.value === 'todas' || cate.value === '') {
+            <h1 class="divisiones" id="mates">Mates</h1>
+            }
+
+            <div class="mates">
+                @for (p of productosFiltrados; track p.id) {
+                @if (p.disponible && p.categoria === 'Mates') {
+                <div class="card">
+                    @if (p.descuento > 0) {
+                    <span class="descuento">
+                        -{{ p.descuento }}%
+                    </span>
+                    }
+                    <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
+                    <h3>{{ p.nombre }}</h3>
+                    <p>${{ p.precio }}</p>
+                    <div class="botones">
+                        <button (click)="agregarFavorito(p)">
+                            Favorito
+                        </button>
+
+                        <button (click)="agregarCarrito(p)">
+                            + carrito
+                        </button>
+                    </div>
+                </div>
+                }
+                }
+            </div>
+
+            @if (cate.value === 'Bombillas' || cate.value === 'todas' || cate.value === '') {
+            <h1 class="divisiones" id="bombillas">Bombillas</h1>
+            }
+
+            <div class="bombillas">
+                @for (p of productosFiltrados; track p.id) {
+                @if (p.disponible && p.categoria === 'Bombillas') {
+                <div class="card">
+                    @if (p.descuento > 0) {
+                    <span class="descuento">
+                        -{{ p.descuento }}%
+                    </span>
+                    }
+                    <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
+                    <h3>{{ p.nombre }}</h3>
+                    <p>${{ p.precio }}</p>
+                    <div class="botones">
+                        <button (click)="agregarFavorito(p)">
+                            Favorito
+                        </button>
+
+                        <button (click)="agregarCarrito(p)">
+                            + carrito
+                        </button>
+                    </div>
+                </div>
+                }
+                }
+            </div>
+
+            @if (cate.value === 'Termos' || cate.value === 'todas' || cate.value === '') {
+            <h1 class="divisiones" id="termos">Termos</h1>
+            }
+
+            <div class="termos">
+                @for (p of productosFiltrados; track p.id) {
+                @if (p.disponible && p.categoria === 'Termos') {
+                <div class="card">
+                    @if (p.descuento > 0) {
+                    <span class="descuento">
+                        -{{ p.descuento }}%
+                    </span>
+                    }
+                    <img src="{{ p.imagen }}" alt="{{ p.nombre }}">
+                    <h3>{{ p.nombre }}</h3>
+                    <p>${{ p.precio }}</p>
+                    <p>Peso: {{ p.peso }} L</p>
+
+                    <div class="botones">
+                        <button (click)="agregarFavorito(p)">
+                            Favorito
+                        </button>
+
+                        <button (click)="agregarCarrito(p)">
+                            + carrito
+                        </button>
+                    </div>
+                </div>
+                }
+                }
+            </div>
+
+        </div>
+    </section>
+</body>

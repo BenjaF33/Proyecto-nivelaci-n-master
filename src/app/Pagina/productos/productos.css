@@ -1,0 +1,280 @@
+body {
+    background: #0d0d0d;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    position: relative;
+}
+
+.descuento {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: #ff5a1f;
+
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    z-index: 10;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ---------------- VOLVER ARRIBA ---------------- */
+
+.filtroBotones {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: sticky;
+    top: 40px;
+    height: 100%;
+}
+
+
+
+.volverArriba {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.volverArriba button {
+    width: 100%;
+
+    text-align: center;
+
+    background: #181818;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px;
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    transition: 0.25s;
+}
+
+.volverArriba button:hover {
+    background: #ff5a1f;
+
+    border-color: #ff5a1f;
+
+    transform: translateY(-3px);
+}
+
+.divisiones {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    border-bottom: 1px solid #ff5a1f;
+    padding-bottom: 10px;
+}
+
+.productos {
+    padding: 70px 5%;
+    background: #0d0d0d;
+
+    display: flex;
+    gap: 40px;
+
+    align-items: flex-start;
+}
+
+/* ---------------- FILTRO ---------------- */
+
+.filtro {
+    width: 280px;
+
+    background: #111;
+
+    border-right: 1px solid #1f1f1f;
+
+    padding: 30px 25px;
+
+    border-radius: 14px;
+
+    position: sticky;
+    top: 20px;
+
+    height: fit-content;
+}
+
+.filtro h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.filtro div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* INPUTS */
+
+.filtro input,
+.filtro select {
+    width: 100%;
+
+    padding: 14px;
+
+    background: #1a1a1a;
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.25s;
+
+    outline: none;
+}
+
+.filtro input::placeholder {
+    color: #888;
+}
+
+.filtro input:focus,
+.filtro select:focus {
+    border-color: #ff5a1f;
+
+    box-shadow: 0 0 10px rgba(255, 90, 31, 0.3);
+}
+
+/* ---------------- CONTENEDOR GENERAL ---------------- */
+
+.divP {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* ---------------- CATEGORIAS ---------------- */
+
+.yerba,
+.mates,
+.bombillas,
+.termos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* ---------------- CARD ---------------- */
+
+.card {
+    width: 320px;
+
+    background: #111;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    border: 1px solid #1c1c1c;
+
+    transition: 0.25s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    border-color: #ff5a1f;
+
+    box-shadow: 0 0 15px rgba(255, 90, 31, 0.2);
+}
+
+.botones {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+
+    object-fit: contain;
+
+    background: white;
+
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: white;
+
+    font-size: 24px;
+
+    margin: 20px 0 10px;
+
+    font-weight: 400;
+
+    min-height: 60px;
+}
+
+.card p {
+    color: #ff5a1f;
+
+    font-size: 22px;
+
+    margin-bottom: 18px;
+}
+
+.card button {
+    width: 50%;
+    padding: 14px;
+
+    border: 1px solid #2b2b2b;
+
+    background: #181818;
+
+    color: white;
+
+    font-size: 17px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    margin-top: auto;
+}
+
+.card button:hover {
+    background: #ff5a1f;
+
+    border-color: #ff5a1f;
+}

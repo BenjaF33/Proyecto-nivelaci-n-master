@@ -1,0 +1,195 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: #0d0d0d;
+    overflow-x: hidden;
+}
+
+/* ---------------- PRESENTACION ---------------- */
+
+.presentacion {
+    height: 85vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.presentacion div {
+    padding: 50px;
+
+    background: rgba(17, 17, 17, 0.75);
+
+    border: 1px solid #222;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(6px);
+}
+
+.presentacion h1 {
+    color: white;
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+.presentacion p {
+    color: #cfcfcf;
+
+    font-size: 20px;
+}
+
+/* ---------------- DESTACADOS ---------------- */
+
+.destacados {
+    padding: 80px 5%;
+
+    background: #111;
+
+    text-align: center;
+}
+
+.destacados h2 {
+    color: white;
+
+    font-size: 42px;
+
+    margin-bottom: 50px;
+
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* FILA */
+
+.row {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    flex-wrap: wrap;
+}
+
+/* CONTENEDOR */
+
+.col-auto {
+    display: flex;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+/* ---------------- CARDS ---------------- */
+
+.col-auto a {
+    width: 300px;
+    height: 360px;
+
+    background: #181818;
+
+    border: 1px solid #222;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    position: relative;
+
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* HOVER */
+
+.col-auto a:hover {
+    transform: translateY(-8px);
+
+    border-color: #ff5a1f;
+
+    box-shadow: 0 0 25px rgba(255, 90, 31, 0.2);
+}
+
+/* IMAGEN */
+
+.col-auto a img {
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    background: #fff;
+}
+
+/* TEXTO */
+
+.col-auto a div {
+    height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.col-auto a h5 {
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+/* EFECTO NARANJA */
+
+.col-auto a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #ff5a1f;
+
+    transform: scaleX(0);
+
+    transition: 0.3s;
+}
+
+.col-auto a:hover::after {
+    transform: scaleX(1);
+}

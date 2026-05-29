@@ -1,0 +1,111 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    background-color: #0d0d0d;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+/* TITULO */
+h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+/* TEXTO */
+body > p {
+    color: #aaa;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* FORMULARIO */
+form {
+    background-color: #111;
+    border: 1px solid #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* LABEL */
+label {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* INPUTS */
+input {
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+}
+
+/* FOCUS */
+input:focus {
+    border-color: #ff4d00;
+    outline: none;
+}
+
+/* BOTON PRINCIPAL */
+form button {
+    background-color: #ff4d00;
+    border: none;
+    padding: 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #ff6a2a;
+}
+
+/* BOTONES GOOGLE Y FACEBOOK */
+body > button {
+    width: 320px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background-color: #1c1c1c;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+body > button:hover {
+    border-color: #ff4d00;
+}
+
+/* TEXTO FINAL */
+body > p:last-child {
+    margin-top: 15px;
+}
+
+/* LINKS */
+a {
+    color: #ff4d00;
+    text-decoration: none;
+}

@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0d0d0d;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.carrito {
+    width: 90%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+
+.contenedor-carrito {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.productos {
+    flex: 3;
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.titulos {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.producto {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1fr 1fr 50px;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid #222;
+}
+
+.producto img {
+    width: 90px;
+    background: white;
+    border-radius: 10px;
+}
+
+.info h3 {
+    margin-bottom: 8px;
+}
+
+.info p {
+    color: #888;
+}
+
+.precio,
+.subtotal {
+    color: #ff4d00;
+    font-weight: bold;
+}
+
+.cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cantidad button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: #1c1c1c;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.eliminar {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.seguir,
+.vaciar {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.seguir {
+    background: #1c1c1c;
+    color: white;
+}
+
+.vaciar {
+    color: #000000;
+    background-color: #ff4d00;
+}
+
+.resumen {
+    flex: 1;
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.resumen h2 {
+    margin-bottom: 30px;
+}
+
+.fila,
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.total {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff4d00;
+    margin-top: 30px;
+}
+
+.gratis {
+    color: #32cd32;
+}
+
+.comprar {
+    width: 100%;
+    padding: 18px;
+    background: #ff4d00;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.seguro {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+}
+
+@media(max-width:1000px) {
+    .contenedor-carrito {
+        flex-direction: column;
+    }
+
+    .producto {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .titulos {
+        display: none;
+    }
+
+    .acciones {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* BOTONES GENERAL */
+button {
+    transition: all 0.3s ease;
+}
+
+.precio-viejo {
+
+    text-decoration: line-through;
+
+    color: gray;
+
+    font-size: 14px;
+
+    display: block;
+}
+
+.precio-descuento {
+
+    color: #ff4500;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+/* BOTON FINALIZAR COMPRA */
+.comprar:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 77, 0, 0.35);
+    background: #ff5e14;
+}
+
+/* BOTON VACIAR */
+.vaciar {
+    background: #ff4d00;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.vaciar:hover {
+    background: #ff2200;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 77, 0, 0.35);
+}
+
+/* BOTON SEGUIR */
+.seguir:hover {
+    transform: translateY(-4px);
+    background: #222;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
+}
+
+/* BOTONES + Y - */
+.cantidad button:hover {
+    transform: scale(1.15);
+    background: #ff4d00;
+}
+
+/* BOTON ELIMINAR */
+.eliminar:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: #ff4d00;
+}
+
+/* AL HACER CLICK */
+button:active {
+    transform: scale(0.95);
+}
+
+.vacío {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+}

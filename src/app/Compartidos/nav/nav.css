@@ -1,0 +1,224 @@
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar {
+    background-color: #0f0f0f !important;
+    border-bottom: 1px solid #222;
+    padding: 12px 25px;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.navbar-brand {
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+    transition: 0.3s;
+}
+
+.navbar-brand span {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #ff5a1f;
+}
+
+/* IMAGEN LOGO */
+
+.navbar-brand img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    background: white;
+
+    padding: 2px;
+
+    transition: 0.35s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(8deg) scale(1.08);
+
+    box-shadow: 0 0 15px rgba(255, 90, 31, 0.45);
+}
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+.navbar .nav {
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar .nav-item {
+    margin: 0 6px;
+}
+
+.navbar .nav-link {
+    color: #cfcfcf !important;
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #ff5a1f !important;
+}
+
+/* ========================= */
+/* ICONOS DERECHA */
+/* ========================= */
+
+.carrito ul {
+    display: flex;
+    gap: 12px;
+
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* BOTON GENERAL */
+
+.carrito .nav-link {
+    position: relative;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 !important;
+
+    background: linear-gradient(145deg, #1c1c1c, #262626);
+
+    border: 1px solid #313131;
+
+    border-radius: 16px;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* HOVER */
+
+.carrito .nav-link:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(145deg, #ff5a1f, #ff3c00);
+
+    border-color: #ff5a1f;
+
+    box-shadow: 0 6px 18px rgba(255, 90, 31, 0.35);
+}
+
+/* ELIMINA DOBLE CUADRADO */
+
+#carrito,
+#favoritos,
+.nav-item div:has(.imgusuario) {
+    width: auto;
+    height: auto;
+
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    padding: 0;
+}
+
+/* ========================= */
+/* ICONOS */
+/* ========================= */
+
+.imgcarrito,
+.imgusuario,
+.imgfavoritos {
+    width: 27px;
+    height: 27px;
+
+    object-fit: contain;
+
+    transition: 0.3s ease;
+}
+
+/* EFECTOS */
+
+.carrito .nav-link:hover .imgcarrito {
+    transform: rotate(-10deg) scale(1.12);
+
+    filter: brightness(0) invert(1);
+}
+
+.carrito .nav-link:hover .imgusuario,
+.carrito .nav-link:hover .imgfavoritos {
+    transform: scale(1.12);
+
+    filter: brightness(0) invert(1);
+}
+
+/* ========================= */
+/* BURBUJITA */
+/* ========================= */
+
+.burbuja {
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ff3c00;
+    color: white;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    border: 2px solid #0f0f0f;
+
+    z-index: 20;
+
+    animation: aparecer 0.25s ease;
+}
+
+/* ========================= */
+/* ANIMACION */
+/* ========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

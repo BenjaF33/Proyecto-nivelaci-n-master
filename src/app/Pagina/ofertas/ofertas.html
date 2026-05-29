@@ -1,0 +1,41 @@
+<section class="ofertas">
+
+  <h2>Ofertas</h2>
+
+  <div class="contenedor-ofertas">
+
+    @for (p of obtenerOfertas(); track p.id) {
+
+    <div class="card">
+
+      <span class="descuento">
+        -{{ p.descuento }}%
+      </span>
+
+      <img [src]="p.imagen">
+
+      <h3>{{ p.nombre }}</h3>
+
+      <p class="precio-viejo">
+        ${{ p.precio }}
+      </p>
+
+      <p class="precio-nuevo">
+        ${{ precioFinal(p) }}
+      </p>
+
+      <button
+        type="button"
+        (click)="agregarProducto(p)">
+
+        Comprar
+
+      </button>
+
+    </div>
+
+    }
+
+  </div>
+
+</section>
