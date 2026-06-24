@@ -64,4 +64,13 @@ export class Carrito implements OnInit {
     this.actualizarTotal();
   }
 
+  finalizarCompra() {
+    if (this.productos.length > 0) {
+      alert('Compra finalizada con éxito');
+      this.vaciarCarrito();
+    } else {
+      alert('El carrito está vacío. No se puede finalizar la compra.');
+    }
+  }
+
 }
