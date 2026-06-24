@@ -17,7 +17,7 @@ export class Carrito implements OnInit {
   productos: any[] = [];
   total: number = 0;
 
-  constructor(public carritoService: CarritoService) { }
+  constructor(private carritoService: CarritoService) { }
 
   ngOnInit() {
     this.productos = this.carritoService.obtenerProductos();

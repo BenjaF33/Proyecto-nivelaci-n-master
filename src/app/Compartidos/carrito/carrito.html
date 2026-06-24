@@ -13,45 +13,31 @@
                 </div>
                 }
                 <div>
-
                     @if (productos.length === 0) {
-
                     <p class="vacío">Tu carrito está vacío</p>
-
                     } @else {
-
                     @for (p of productos; track $index) {
-
                     <div class="producto">
-
                         <img [src]="p.imagen" [alt]="p.nombre">
-
                         <div class="info">
                             <h3>{{ p.nombre }}</h3>
                             <p>{{ p.peso }} g</p>
                         </div>
 
                         <p class="precio">
-
                             @if (p.descuento && p.descuento > 0) {
-
                             <span class="precio-viejo">
                                 ${{ p.precio }}
                             </span>
-
                             <span class="precio-descuento">
                                 ${{
                                 p.precio -
                                 (p.precio * p.descuento / 100)
                                 }}
                             </span>
-
                             } @else {
-
                             ${{ p.precio }}
-
                             }
-
                         </p>
 
                         <div class="cantidad">

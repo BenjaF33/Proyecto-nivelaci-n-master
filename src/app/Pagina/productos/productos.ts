@@ -23,7 +23,6 @@ export class Productos implements OnInit {
   productos: Producto[] = [];
   productosFiltrados: Producto[] = [];
 
-  carrito: Producto[] = [];
   buscado: string = "";
 
   ngOnInit(): void {
@@ -68,11 +67,11 @@ export class Productos implements OnInit {
   volverArriba() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
     });
   }
 
   agregarCarrito(p: Producto) {
+    console.log(p)
     this.carritoService.addProducto(p);
   }
 

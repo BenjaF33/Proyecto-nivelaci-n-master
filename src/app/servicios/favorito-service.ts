@@ -18,7 +18,6 @@ export class FavoritoService {
     if (!productoExistente) {
       this.favoritos.push(producto);
     }
-
     console.log('Producto agregado a favoritos:', producto);
     console.log('Lista de favoritos:', this.favoritos);
   }
