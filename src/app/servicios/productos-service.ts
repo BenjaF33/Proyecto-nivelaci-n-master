@@ -9,13 +9,6 @@ export class ProductosService {
   cont: number = 1;
 
   productos: Producto[] = [
-
-
-
-
-
-
-
     
     // CANARIAS
     { id: this.cont++, nombre: 'Canarias Tradicional', precio: 4800, imagen: 'assets/img_yerbas/canarias.png', peso: 500, stock: 10, disponible: true, categoria: 'Yerba', descuento: 20 },
